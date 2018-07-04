@@ -1,18 +1,18 @@
 # Site settings
-title: Destination Single
+title: Thailandia
 client:
-  name: Client Name
-  link: "#client-name"
-core-se-link: https://www.secretescapes.com/current-sales
+  name: Qatar Airways
+  link: https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440
+core-se-link: https://it.secretescapes.com/offerte-in-corso
 description: >
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Sei già stato in Thailandia? Che la tua risposta sia affermativa o negativa, poco importa. Questo paese, da nord a sud, ha tantissimo da offrirti: dalle colline e le montagne ricoperte di natura rigogliosa, alle spiagge bianchissime, passando per i templi che raccontano storie antiche e suggestive, avrai tantissimo da scoprire ed esplorare, sempre accompagnato da un’atmosfera rilassata che contraddistingue la cultura thai.
 
 # file paths
 url:     "http://mp.secretescapes.com" # the base hostname & protocol for your site
-baseurl: "/_templates/destination-single" # the subpath of your site, e.g. /blog/
-img:     "/_templates/destination-single/_assets/img"
-css:     "/_templates/destination-single/_assets/css"
-js:      "/_templates/destination-single/_assets/js"
+baseurl: "/it/thailandia" # the subpath of your site, e.g. /blog/
+img:     "/it/thailandia/_assets/img"
+css:     "/it/thailandia/_assets/css"
+js:      "/it/thailandia/_assets/js"
 
 
 # Build settings

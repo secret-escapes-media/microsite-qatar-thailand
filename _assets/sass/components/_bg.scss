@@ -4,6 +4,7 @@
   &--white { background-color: $white; }
   &--light { background-color: $grey-lightest; }
   &--dark  { background-color: $grey-dark; }
+
   &--img   { @include background-attributes; }
   &__fixed {
     position: fixed;
@@ -15,6 +16,8 @@
     @include background-attributes;
     background-color: $grey-darker;
   }
-
-  &--grey  { background-color: $grey-lighter; }
+  &--dark-pattern  {
+    background-color: rgb(2,125,141);
+    background-image: url('../img/bg-pattern.png'), linear-gradient(45deg, rgba(2,125,141,1) 0%, rgba(32,158,183,1) 100%);
+  }
 }

@@ -17,6 +17,17 @@
   &--orange { background-color: $orange;
     &:hover { background-color: $orange-dark; }
   }
+  &--blue { background-color: $t-blue;
+    &:hover { background-color: darken($t-blue,5); }
+  }
+  &--qatar { background-color: $q-purple;
+    &:hover { background-color: darken($q-purple,5); }
+  }
+  &--qatar-light {
+    color: $q-purple;
+    background-color: rgba($white,.75);
+    &:hover { background-color: rgba($white,.9); }
+  }
   &--outline {
     color: inherit;
     &:before {

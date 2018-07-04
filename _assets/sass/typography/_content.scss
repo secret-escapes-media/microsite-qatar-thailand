@@ -25,6 +25,7 @@ ol li   { list-style-type: decimal; }
 hr {
   border: 0;
   height: 1px;
-  background-color: $grey-lightest;
+  background-color: rgba($white,.5);
   margin: $s1 0;
+  width: $s10;
 }
