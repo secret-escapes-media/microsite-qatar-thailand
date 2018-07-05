@@ -55,14 +55,17 @@
     bottom: -1px;
     left: 0; right: 0;
     background-image: url('../img/content/qatar/waves-beige.svg');
-    background-position: top center;
+    background-position: bottom center;
     background-repeat: no-repeat;
     background-size: cover;
     &:before {
       content: "";
       display: block;
       width: 100%;
-      padding-top: 5.5%;
+      padding-top: 6.5%;
+    }
+    @include bp($lg){
+      bottom: -10px;
     }
   }
 }

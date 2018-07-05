@@ -19,12 +19,7 @@
           <div class="container">
 
             <div class="bob{% cycle '', ' bob--swap' %}">
-              <div class="bob__text">
-                <div class="title title--xxl">{{section.title}}</div>
-                <p class="text--xl">{{section.description}}</p>
-                <div class="space--sm"></div>
-                <a href="#guide" class="btn btn--blue">Scarica la guida</a>
-              </div>
+
               <div class="bob__img">
                 <div class="row row--gutters-sm">
                   <div class="col col--12">
@@ -42,39 +37,51 @@
                   </div>
                 </div>
               </div>
+
+              <div class="bob__text">
+                <div class="title title--xxl">{{section.title}}</div>
+                <p class="text--xl">{{section.description}}</p>
+                <div class="space--sm"></div>
+                <a href="#guide" class="btn btn--blue">Scarica la guida</a>
+              </div>
+
             </div>
 
           </div>
         </div>
       {% endfor %}
 
+
+
       <!-- Guide section -->
       <div id="guide" class="js-nav-section vpad--xxxxl bg--dark-pattern text--white">
         <div class="container text--center">
-          <h2 class="title title--lg">La guida ai segreti della Thailandia</h2>
+          <h2 class="title title--lg">{{page.guide.title}}</h2>
           <div class="width width--xl">
             <div class="width width--lg text--xxl text--normal space--sm">
-              <p>Ti abbiamo incuriosito? Scopri con noi i segreti di questa terra ricca di storia, spiagge da cartolina e natura rigogliosa. Per scaricare la nostra guida, tutto quello che devi fare è compilare i campi qui sotto, facile!</p>
+              <p>{{page.guide.content}}</p>
             </div>
             <div class="space--xl"></div>
-            <iframe class="entry-form" src="https://promotion5129.strutta.me" width="100%" height="900"></iframe>
+            <iframe class="entry-form" src="{{page.guide.form.url}}" width="100%" height="{{page.guide.form.height}}"></iframe>
           </div>
         </div>
       </div>
+
+
 
       <!-- Qatar section -->
       <div id="qatar" class="js-nav-section bg--img qatar-section">
         <div class="qatar-section__bg" style="background-image: url('{{site.img}}/content/qatar/bg.jpg');"></div>
         <div class="qatar-section__content container text--white">
           <div class="width--lg">
-            <a id="tracking-qatar-banner-logo" href="https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440" target="_blank"><img class="qatar-section__logo" src="{{site.img}}/logo/qatar.svg" alt="Qatar Airways"></a>
-            <h3 class="qatar-title qatar-title--lg">Ti senti ispirato?</h3>
-            <h3 class="qatar-title qatar-title--sm qatar-title--italic space--xxs">Vola in Thailandia con Qatar Airways</h3>
+            <a id="tracking-qatar-banner-logo" href="{{page.qatar.link}}" target="_blank"><img class="qatar-section__logo" src="{{site.img}}/logo/qatar.svg" alt="Qatar Airways"></a>
+            <h3 class="qatar-title qatar-title--lg">{{page.qatar.title}}</h3>
+            <h3 class="qatar-title qatar-title--sm qatar-title--italic space--xxs">{{page.qatar.subtitle}}</h3>
             <div class="space--xs"></div>
             <hr class="hr">
-            <p class="text--xxl text--normal">Prenota subito un volo per la Thailandia con Qatar Airways e rendi i tuoi sogni realtà, volando nel massimo comfort a bordo di aerei super moderni.</p>
+            <p class="text--xxl text--normal">{{page.qatar.content}}</p>
             <div class="space--md"></div>
-            <a id="tracking-qatar-banner-button" class="btn btn--lg btn--qatar-light" href="https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440" target="_blank">Vedi voli</a>
+            <a id="tracking-qatar-banner-button" class="btn btn--lg btn--qatar-light" href="{{page.qatar.link}}" target="_blank">{{page.qatar.cta}}</a>
           </div>
         </div>
 
@@ -84,44 +91,22 @@
       <div class="qatar-info-section">
         <div class="container">
 
-          <div class="bob">
+          {% for feature in page.qatar.features %}
+          <div class="bob{% cycle "", " bob--swap" %}">
             <div class="bob__img">
-              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/qatar/first-class.jpg');">
-                <a id="tracking-qatar-{{feature.id}}-img" class="bg-img__link" href="https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440" target="_blank"></a>
+              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/qatar/{{feature.id}}.jpg');">
+                <a id="tracking-qatar-{{feature.id}}-img" class="bg-img__link" href="{{page.qatar.link}}" target="_blank"></a>
               </div>
             </div>
             <div class="bob__text">
-              <h4 class="qatar-title">First Class</h4>
-              <p class="text--lg text--normal">L’arredamento lussuoso ed elegante che esalta la spaziosità delle cabine, unito a un servizio impeccabile e soprattutto su misura per te, renderanno l’esperienza di viaggio in First Class con Qatar memorabile e raffinata.</p>
+              <h4 class="qatar-title">{{feature.title}}</h4>
+              <p class="text--lg text--normal">{{feature.content}}</p>
             </div>
           </div>
-
-          <div class="bob bob--swap">
-            <div class="bob__img">
-              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/qatar/business-class.jpg');">
-                <a id="tracking-qatar-{{feature.id}}-img" class="bg-img__link" href="https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440" target="_blank"></a>
-              </div>
-            </div>
-            <div class="bob__text">
-              <h4 class="qatar-title">Business Class</h4>
-              <p class="text--lg text--normal">Una poltrona comodissima e tutta tua, prodotti di bellezza lussuosi e un servizio ristorazione davvero da leccarsi i baffi. Non ci stupisce che quella di Qatar sia stata premiata “Migliore Business Class del mondo” nel 2016 e nel 2017.</p>
-            </div>
-          </div>
-
-          <div class="bob">
-            <div class="bob__img">
-              <div class="bg-img bg-img--16-9" style="background-image: url('{{site.img}}/content/qatar/economy-class.jpg');">
-                <a id="tracking-qatar-{{feature.id}}-img" class="bg-img__link" href="https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440" target="_blank"></a>
-              </div>
-            </div>
-            <div class="bob__text">
-              <h4 class="qatar-title">Economy Class</h4>
-              <p class="text--lg text--normal">Sulle comode poltrone Qatar avrai tutto lo spazio necessario per mangiare, dormire, rilassarti. Ad attenderti a bordo un kit di cortesia, qualche leccornia da gustare durante il viaggio e un servizio di intrattenimento con un’ampia selezione di film e serie TV.</p>
-            </div>
-          </div>
+          {% endfor %}
 
           <div class="space--xxl text--center">
-            <a id="tracking-qatar-content-button" class="btn btn--lg btn--qatar" href="https://www.qatarairways.com/it-it/offers/voli-per-thailandia.html?CID=BAIT862440" target="_blank">Vedi voli</a>
+            <a id="tracking-qatar-content-button" class="btn btn--lg btn--qatar" href="{{page.qatar.link}}" target="_blank">{{page.qatar.cta}}</a>
           </div>
 
         </div>
